@@ -31,20 +31,18 @@ def changeDetect(data, alpha, threshold):
     return xval, array, np.where(np.abs(array) > threshold)[0]
 
 
-#print(changeDetect(data1, 0.95, 1.5))
-#print(data1)
-plt.figure(1)
 for i in range(6):
-    xx, yy, _ = changeDetect(data1, 0.75+(i*0.05), 1.5)
-    plt.plot(xx,yy, label=0.75+(i*0.05))
+    alpha_val = 0.75+(i*0.05)
+    xx, yy, _ = changeDetect(data1, alpha_val, 1.5)
+    plt.plot(xx, yy, label=alpha_val)
 plt.legend()
 plt.show()
-#print(data1)
 
-xval = range(0, len(data1))
-yval = expofilter(data1, 0.85)
 
-print(yval)
-
-plt.plot(xval, yval)
-plt.show()
+# xval = range(0, len(data1))
+# yval = expofilter(data1, 0.85)
+#
+# print(yval)
+#
+# plt.plot(xval, yval)
+# plt.show()
